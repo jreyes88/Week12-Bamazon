@@ -20,12 +20,13 @@ prompt.start();
 
 function read() {
 	connection.query('SELECT * FROM products', function(err, res) {
+
 		if(err) throw err;
 		for (var i = 0; i < res.length; i++) {
-			console.log("\n===============\n" + "Number: " + res[i].itemID + " Product Name: " +  res[i].ProductName + " Department Name: " + res[i].DepartmentName + " Price: " + res[i].Price + " Quantity: " + res[i].StockQuantity + "\n===============");
+			console.log("-------------------------------------------------------------------------------------------------------------------------------\n" + "ItemID: " + res[i].itemID + " || Product Name: " +  res[i].ProductName + " || Department Name: " + res[i].DepartmentName + " || Price: " + res[i].Price + " || Quantity: " + res[i].StockQuantity);
 		}
+		promptUser();
 	});
-	promptUser();
 };
 
 
@@ -33,34 +34,50 @@ function promptUser(){
 	prompt.get(
 		{
 			properties: {
-				productChoice: {
-					message: '\nPlease type the product you would like to purchase'
+				productChoiceItemID: {
+					message: '\nPlease type the index of the product you would like to purchase'
 				},
 				productChoiceQuantity: {
 					message: '\nHow many would you like to purchase?',
 				}
 			}
 		}, function (err, promptResult) {
-	    	console.log("Product: " + promptResult.productChoice);
-	    	console.log("Quantity: " + promptResult.productChoiceQuantity);
-	    	update(promptResult.productChoice, promptResult.productChoiceQuantity);
+	    	// console.log("Product: " + promptResult.productChoiceItemID);
+	    	// console.log("Quantity: " + promptResult.productChoiceQuantity);
+	    	updateStock(promptResult.productChoiceItemID, promptResult.productChoiceQuantity);
 		}
 	);
 };
 read();
 
-function update(productChoice, productChoiceQuantity) {
-	connection.query("UPDATE products SET ? WHERE ?", 
+function updateStock(productChoiceItemID, productChoiceQuantity) {
+	var newStockQuantity;
+	// console.log("productChoiceItemID: " + productChoiceItemID);
+	connection.query('SELECT * FROM products WHERE ?', {itemID:productChoiceItemID},
+		function(err, res) {
+			// console.log("results: " + res[0].StockQuantity);
+			var newStockQuantity = res[0].StockQuantity -= productChoiceQuantity;
+			// console.log("New Stock Quantity: " + newStockQuantity);
+			return newStockQuantity;
+		});
+		updateTableQuantity(productChoiceItemID, newStockQuantity);
+};
+
+function updateTableQuantity(updateProductItemID, updateStockQuantity) {
+	console.log("Product Item ID: " + updateProductItemID);
+	console.log("Updated Stock Quantity: " + updateStockQuantity);
+	connection.query("UPDATE products SET ? WHERE ?",
 		[
 			{
-				ProductName: productChoice
+				itemID: updateProductItemID
 			}, {
-				StockQuantity:  -productChoiceQuantity
+				StockQuantity:  updateStockQuantity
 			}
 		],
 		function(err, res) {
-			
-	});
+
+		}
+	);
 	read();
 };
 
