@@ -1,3 +1,4 @@
+// Require and connect to MySQL ============================================ //
 var mysql = require('mysql');
 var connection = mysql.createConnection(
 	{
@@ -14,9 +15,11 @@ connection.connect(
 	}
 );
 
+// Require and start Prompt ================================================ //
 var prompt = require('prompt');
 prompt.start();
 
+// Function that displays initial store inventory ========================== //
 function read() {
 	connection.query('SELECT * FROM products', function(err, res) {
 		if(err) throw err;
@@ -27,7 +30,7 @@ function read() {
 	});
 };
 
-
+// Function that prompts for item selection and quantity =================== //
 function promptUser(){
 	prompt.get(
 		{
@@ -46,21 +49,22 @@ function promptUser(){
 };
 read();
 
-function checkStockQuantity() {
-
-};
-
+// If-Else Statement for out of stock or proceeding to update quantity ===== //
 function updateStock(productChoiceItemID, productChoiceQuantity) {
 	var newStockQuantity;
 	connection.query('SELECT * FROM products WHERE ?', {itemID:productChoiceItemID},
 		function(err, res) {
-			// console.log("results: " + res[0].StockQuantity);
 			var newStockQuantity = res[0].StockQuantity -= productChoiceQuantity;
-			updateTableQuantity(productChoiceItemID, newStockQuantity);
+			if (newStockQuantity >= 0) {
+				updateTableQuantity(productChoiceItemID, newStockQuantity);
+			} else {
+				console.log("You don't have enough in stock!");
+				read();
+			};
 		});
-			
 };
 
+// Updates quantity in database and re-runs the view script ================ //
 function updateTableQuantity(productChoiceItemID, newStockQuantity) {
  	connection.query("UPDATE products SET ? WHERE ?", [
  		{
@@ -71,26 +75,3 @@ function updateTableQuantity(productChoiceItemID, newStockQuantity) {
  	], function(err, res) {})
 	read();
 };
-
-
-// function remove() {
-// 	connection.query("DELETE FROM songs WHERE ?", 
-// 		{artist: "Eagle Eye Cherry"}, function(err, res){
-// 			console.log(res);
-// 		}
-// 	);
-// };
-
-// CRUD 
-// C - CREATE- 
-// INSERT INTO pets (name, type, age)
-// VALUES ('fido', 'dog', 3);
-
-// R - READ
-// SELECT * FROM pets
-
-// U - UPDATE
-// UPDATED pets SET name = 'under dog' WHERE type = 'dog';
-
-// D - DELETE
-// DELETE FROM pets WHERE type = 'mouse';
