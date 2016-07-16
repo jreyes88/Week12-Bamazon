@@ -1,15 +1,18 @@
 # Week12-Bamazon
 
 ## Dependencies
-This application requires MySQL and prompt.
+This application requires MySQL and prompt, and cli-table.
 `$ npm install mysql`
 `$ npm install prompt`
+`$ npm install cli-table`
 
 Run the customer view with the command:
 `$ node BamazonCustomer.js`
 
 Run the manager view with the command:
 `$ node BamazonManager.js`
+
+
 
 The SQL Database is in the SQL File directory for the grader. Otherwise, screenshots are provided below.
 
