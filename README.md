@@ -37,25 +37,25 @@ Then the program will alert that there is not enough in stock, and re-display th
 ###Manager View
 The Initial Manager View will display options for the manager to choose how to interact with the store inventory.
 
-<img src="/Images/Manager1.png" alt="Customer View 1" height=110px>
+<img src="/Images/Manager1.png" alt="Customer View 1" height=100px>
 
 Selecting Option 1 will display all inventory in the table, similar to the customer view.
 
 
 Selecting Option 2 will display all products that have less than 100 in their stock quantity
 
-![Manager View 2](/Images/Manager2.png)
+<img src="/Images/Manager2.png" alt="Customer View 2">
 
 Selecting Option 3 allows the manager to update the quantity of a specific product
 
-![Manager View 3](/Images/Manager3.png)
+<img src="/Images/Manager3.png" alt="Customer View 3">
 
-![Manager View 4](/Images/Manager4.png)
+<img src="/Images/Manager4.png" alt="Customer View 4" height=70px>
 
-![Manager View 5](/Images/Manager5.png)
+<img src="/Images/Manager5.png" alt="Customer View 5">
 
 Selecting Option 4 allows the manager to add a new product entirely
 
-![Manager View 6](/Images/Manager6.png)
+<img src="/Images/Manager6.png" alt="Customer View 6" height=100px>
 
-![Manager View 7](/Images/Manager7.png)
+<img src="/Images/Manager7.png" alt="Customer View 7">
