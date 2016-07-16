@@ -24,11 +24,11 @@ The Customer can then choose the itemID for the product that they would like to 
 
 If the item is in stock, the table will update, depleting the quantity by how much the customer has ordered, and display the cost of the customer's order.
 
-![Customer View 3](/Images/Customer3.png)
+<img src="/Images/Customer3.png" alt="Customer View 3">
 
 However, if the customer asks for more of an item than is in stock...
 
-![Customer View 4](/Images/Customer4.png)
+<img src="/Images/Customer4.png" alt="Customer View 4" height=70px>
 
 Then the program will alert that there is not enough in stock, and re-display the table and order prompt.
 
