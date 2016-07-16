@@ -50,12 +50,12 @@ Selecting Option 3 allows the manager to update the quantity of a specific produ
 
 <img src="/Images/Manager3.png" alt="Customer View 3">
 
-<img src="/Images/Manager4.png" alt="Customer View 4" height=70px>
+<img src="/Images/Manager4.png" alt="Customer View 4" height=50px>
 
 <img src="/Images/Manager5.png" alt="Customer View 5">
 
 Selecting Option 4 allows the manager to add a new product entirely
 
-<img src="/Images/Manager6.png" alt="Customer View 6" height=130px>
+<img src="/Images/Manager6.png" alt="Customer View 6" height=160px>
 
 <img src="/Images/Manager7.png" alt="Customer View 7">
