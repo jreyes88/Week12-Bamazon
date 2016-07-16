@@ -28,3 +28,21 @@ However, if the customer asks for more of an item than is in stock...
 
 Then the program will alert that there is not enough in stock, and re-display the table and order prompt.
 ![Customer View 5](/Images/Customer5.png)
+
+###Manager View
+The Initial Manager View will display options for the manager to choose how to interact with the store inventory.
+![Manager View 1](/Images/Manager1.png)
+
+Selecting Option 1 will display all inventory in the table, similar to the customer view.
+
+Selecting Option 2 will display all products that have less than 100 in their stock quantity
+![Manager View 2](/Images/Manager2.png)
+
+Selecting Option 3 allows the manager to update the quantity of a specific product
+![Manager View 3](/Images/Manager3.png)
+![Manager View 4](/Images/Manager4.png)
+![Manager View 5](/Images/Manager5.png)
+
+Selecting Option 4 allows the manager to add a new product entirely
+![Manager View 6](/Images/Manager6.png)
+![Manager View 7](/Images/Manager7.png)
