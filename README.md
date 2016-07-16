@@ -16,3 +16,15 @@ The SQL Database is in the SQL File directory for the grader. Otherwise, screens
 ###Customer View
 The Initial Customer View will display all items for sale, their department, quantity, and cost.
 ![Customer View 1](/Images/Customer1.png)
+
+The Customer can then choose the itemID for the product that they would like to purchase, as well as the quantity they would like to purchase.
+![Customer View 2](/Images/Customer2.png)
+
+If the item is in stock, the table will update, depleting the quantity by how much the customer has ordered, and display the cost of the customer's order
+![Customer View 3](/Images/Customer3.png)
+
+However, if the customer asks for more of an item than is in stock...
+![Customer View 4](/Images/Customer4.png)
+
+Then the program will alert that there is not enough in stock, and re-display the table and order prompt.
+![Customer View 5](/Images/Customer5.png)
