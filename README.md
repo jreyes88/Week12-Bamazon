@@ -18,7 +18,7 @@ The Initial Customer View will display all items for sale, their department, qua
 ![Customer View 1](/Images/Customer1.png )
 
 The Customer can then choose the itemID for the product that they would like to purchase, as well as the quantity they would like to purchase.
-![Customer View 2](./Images/Customer2.png =100x20)
+![Customer View 2](./Images/Customer2.png=100x20)
 
 If the item is in stock, the table will update, depleting the quantity by how much the customer has ordered, and display the cost of the customer's order
 ![Customer View 3](/Images/Customer3.png)
