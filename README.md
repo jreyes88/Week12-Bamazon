@@ -37,7 +37,7 @@ Then the program will alert that there is not enough in stock, and re-display th
 ###Manager View
 The Initial Manager View will display options for the manager to choose how to interact with the store inventory.
 
-<img src="/Images/Manager1.png" alt="Customer View 1" height=80px>
+<img src="/Images/Manager1.png" alt="Customer View 1" height=110px>
 
 Selecting Option 1 will display all inventory in the table, similar to the customer view.
 
