@@ -28,16 +28,16 @@ If the item is in stock, the table will update, depleting the quantity by how mu
 
 However, if the customer asks for more of an item than is in stock...
 
-<img src="/Images/Customer4.png" alt="Customer View 4" height=70px>
+<img src="/Images/Customer4.png" alt="Customer View 4" height=65px>
 
 Then the program will alert that there is not enough in stock, and re-display the table and order prompt.
 
-![Customer View 5](/Images/Customer5.png)
+<img src="/Images/Customer5.png" alt="Customer View 5">
 
 ###Manager View
 The Initial Manager View will display options for the manager to choose how to interact with the store inventory.
 
-![Manager View 1](/Images/Manager1.png)
+<img src="/Images/Manager1.png" alt="Customer View 1" height=80px>
 
 Selecting Option 1 will display all inventory in the table, similar to the customer view.
 
