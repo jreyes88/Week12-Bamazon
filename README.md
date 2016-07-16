@@ -50,7 +50,7 @@ Selecting Option 3 allows the manager to update the quantity of a specific produ
 
 <img src="/Images/Manager3.png" alt="Customer View 3">
 
-<img src="/Images/Manager4.png" alt="Customer View 4" height=50px>
+<img src="/Images/Manager4.png" alt="Customer View 4" height=60px>
 
 <img src="/Images/Manager5.png" alt="Customer View 5">
 
