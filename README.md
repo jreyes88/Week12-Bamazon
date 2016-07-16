@@ -15,4 +15,4 @@ The SQL Database is in the SQL File directory for the grader. Otherwise, screens
 
 ###Customer View
 The Initial Customer View will display all items for sale, their department, quantity, and cost.
-![Customer View 1](/images/Customer1.png)
+![Customer View 1](/Images/Customer1.png)
