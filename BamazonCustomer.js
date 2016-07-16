@@ -19,13 +19,46 @@ connection.connect(
 var prompt = require('prompt');
 prompt.start();
 
+
+var Table = require('cli-table');
+
 // Function that displays initial store inventory ========================== //
 function read() {
 	connection.query('SELECT * FROM products', function(err, res) {
 		if(err) throw err;
+
+		var table = new Table(
+			{
+		    	head:[
+		    		'ItemID',
+		    		'Product Name',
+		    		'Department Name',
+		    		'Price',
+		    		'Quantity'
+		    	],
+		    	colWidths:[
+		    		20,
+		    		40,
+		    		20,
+		    		20,
+		    		20
+		    	]
+		    }
+		);
 		for (var i = 0; i < res.length; i++) {
-			console.log("-------------------------------------------------------------------------------------------------------------------------------\n" + "ItemID: " + res[i].itemID + " || Product Name: " +  res[i].ProductName + " || Department Name: " + res[i].DepartmentName + " || Price: " + res[i].Price + " || Quantity: " + res[i].StockQuantity);
-		}
+			table.push(
+				[
+					res[i].itemID,
+					res[i].ProductName,
+					res[i].DepartmentName,
+					res[i].Price,
+					res[i].StockQuantity
+				]
+			);
+
+		};
+		console.log(table.toString());
+
 		promptUser();
 	});
 };
@@ -54,8 +87,10 @@ function updateStock(productChoiceItemID, productChoiceQuantity) {
 	var newStockQuantity;
 	connection.query('SELECT * FROM products WHERE ?', {itemID:productChoiceItemID},
 		function(err, res) {
-			var newStockQuantity = res[0].StockQuantity -= productChoiceQuantity;
+			newStockQuantity = res[0].StockQuantity -= productChoiceQuantity;
 			if (newStockQuantity >= 0) {
+				var customerTotalCost = (res[0].Price * productChoiceQuantity);
+				console.log("Total Cost: $" + customerTotalCost);
 				updateTableQuantity(productChoiceItemID, newStockQuantity);
 			} else {
 				console.log("You don't have enough in stock!");
